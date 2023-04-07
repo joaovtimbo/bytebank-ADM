@@ -41,5 +41,31 @@ internal class Program
         //Console.WriteLine("Novo salário do Marcos: " + marcos.Salario);
         //Console.WriteLine("Novo salário da Maria: " + maria.Salario);
         #endregion
+        CalcularBonificacao();
+    }
+    static void CalcularBonificacao()
+    {
+        GerenciadorDeBonificacao gerenciador = new GerenciadorDeBonificacao();
+
+        Designer ulisses = new Designer("123456");
+        ulisses.Nome = "Ulisses Souza";
+
+        Diretor paula = new Diretor("987456");
+        paula.Nome = "Paula Souza";
+
+        Auxiliar igor = new Auxiliar("74581");
+        igor.Nome = "Igor Dias";
+
+        GerenteDeContas camila = new GerenteDeContas("852963");
+        camila.Nome = "Camila Oliveira";
+
+        gerenciador.Registrar(camila);
+        gerenciador.Registrar(paula);
+        gerenciador.Registrar(igor);
+        gerenciador.Registrar(ulisses);
+
+        Console.WriteLine("Total de Bonificação = " + gerenciador.TotalDeBonificacao);
+
+
     }
 }
