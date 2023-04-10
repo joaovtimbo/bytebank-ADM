@@ -21,7 +21,6 @@ namespace bytebank_ADM.Funcionarios
             this.Cpf = cpf;
             TotalDeFuncionarios++;
             //Console.WriteLine("\nFuncionário criado!");
-            //Teste
         }
 
         public abstract void AumentarSalario();

@@ -1,6 +1,6 @@
-﻿using bytebank_ADM.Utilitarios;
-
-namespace bytebank_ADM.Funcionarios;
+﻿using bytebank_ADM.Funcionarios;
+using bytebank_ADM.Utilitarios;
+using bytebank_ADM.SistemaInterno;
 
 internal class Program
 {
@@ -41,7 +41,8 @@ internal class Program
         //Console.WriteLine("Novo salário do Marcos: " + marcos.Salario);
         //Console.WriteLine("Novo salário da Maria: " + maria.Salario);
         #endregion
-        CalcularBonificacao();
+        //CalcularBonificacao();
+        UsarSistema();
     }
     static void CalcularBonificacao()
     {
@@ -65,7 +66,22 @@ internal class Program
         gerenciador.Registrar(ulisses);
 
         Console.WriteLine("Total de Bonificação = " + gerenciador.TotalDeBonificacao);
-
-
     }
+
+    static void UsarSistema()
+    {
+        SistemaInterno sistema = new SistemaInterno();
+
+        Diretor amanda = new Diretor("147258");
+        amanda.Nome = "Amanda Novaes";
+        amanda.Senha = "123";
+
+        GerenteDeContas ursula = new GerenteDeContas("369258");
+        ursula.Nome = "Ursula Alcantara";
+        ursula.Senha = "789";
+
+        sistema.Logar(amanda, "123");
+        sistema.Logar(ursula, "789");
+    }
+
 }
